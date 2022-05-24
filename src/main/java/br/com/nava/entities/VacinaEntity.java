@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.modelmapper.ModelMapper;
@@ -25,9 +26,13 @@ public class VacinaEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idVacina;
 
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private String nomeVacina;
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private String fabricante;
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private int dosesNecessarias;
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private int intervaloDeDiasEntreDoses; 
 	
 	

@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.validation.constraints.NotEmpty;
 
 import org.modelmapper.ModelMapper;
 
@@ -23,10 +23,19 @@ public class UsuarioEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idUsuario;
 	
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private String nome;
+	
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private String cpf;
+	
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private String dataNascimento;
+	
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private String endereco;
+	
+	@NotEmpty(message = "O campo não pode ser vazio")
 	private String telefone;
 	
 	public UsuarioDTO toDTO() {
